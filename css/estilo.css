@@ -1,0 +1,89 @@
+/*by Carlo Salas*/
+@import 'https://fonts.googleapis.com/css?family=Baloo+Bhaina|Baloo+Chettan|Fjalla+One|Oswald|Titillium+Web|Montserrat';*{
+	margin: 0px;
+	padding: 0px
+}
+
+body{
+	background-color: #e3dedd;
+}
+
+.logo{
+	font-size: 30px;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #ede68a;
+	width: 90px;
+	margin: 20px 0px;
+	padding: 20px ; 
+	border-radius: 10px;
+	border: 100% solid #f0240b;
+	box-shadow: 10px 3px 32px -17px rgba(0,0,0,0.78);
+	color: #2f3032;
+}
+
+header,.main,footer{
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+}
+
+header nav{
+	background-color: #383a56;
+	overflow: hidden;
+}
+
+header nav ul{
+	list-style: none;
+}
+
+header nav ul li{
+	float: left;
+}
+
+header nav ul li a{
+	color:#b0a565;
+	padding: 10px 20px;
+	display: block;
+	text-decoration: none;
+	font-family: 'Baloo Bhaina', cursive;
+}
+
+header nav ul li a:hover{
+	background-color: #ede68a;
+	color:#383a56; 
+}
+
+header nav ul li a:active{
+	color: white;
+}
+
+.main .article {
+	width: 68.5%;
+	margin-right: 1.5%;
+	float:left;
+}
+
+.main .article article{
+	padding: 20px;
+	background: #fff;
+	margin-bottom: 20px;
+}
+aside{
+	width: 30%;
+	padding: 20px;
+	box-sizing:border-box;
+	background-color: #ede68a;
+	float:left;
+	color: #2f3032;
+}
+
+footer{
+	background-color: #2f3032;
+	color: white;
+	padding: 10px 0px;
+	display: block;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	clear: both;
+}
+
