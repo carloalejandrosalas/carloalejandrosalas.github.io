@@ -1,0 +1,15 @@
+/* Google Fonts Link */
+@import url('https://fonts.googleapis.com/css?family=Cabin|Source+Sans+Pro|Lato');
+*{padding: 0px;margin: 0px;}
+body{font-family: 'Source Sans Pro', sans-serif;}
+.primario{background-color: #34495D;color: white;}
+.secundario{background-color: #2C3D4F;color: white;}
+.sol{background-color: #EE7738;}
+.naranja{background-color: #F59D2A;}
+.titulo{font-family: 'Lato',sans-serif;}
+.texto-naranja{color: #F59D2A;}
+.texto-sol{color: #EE7738;}
+.texto-primario{color: #34495D;}
+.texto-secundario{color: #2C3D4F;}
+.blanco{background-color: #fff;}
+.hover-sol:hover{color: white}
