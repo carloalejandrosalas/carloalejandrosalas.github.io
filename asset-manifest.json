@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3812a632.css",
+    "main.js": "/static/js/main.dbfc120a.js",
+    "static/js/787.123b04cf.chunk.js": "/static/js/787.123b04cf.chunk.js",
+    "static/media/pinacate_image.jpg": "/static/media/pinacate_image.182415f87b09f389ef25.jpg",
+    "index.html": "/index.html",
+    "main.3812a632.css.map": "/static/css/main.3812a632.css.map",
+    "main.dbfc120a.js.map": "/static/js/main.dbfc120a.js.map",
+    "787.123b04cf.chunk.js.map": "/static/js/787.123b04cf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3812a632.css",
+    "static/js/main.dbfc120a.js"
+  ]
+}
