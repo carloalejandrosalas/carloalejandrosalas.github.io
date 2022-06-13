@@ -1,9 +1,18 @@
-# Web page by Carlo-Salas
-## Repositorio de mi pagina web
+# Carlo's Web Page
 
-Para el diseño utilice un framework que se llama w3.css. Para saber mas sobre este framework te dejo la
-[Pagina oficial de w3.css](http://w3schools.com/w3css/ "Pagina oficial de w3.css")
+## Stack used on this website.
 
-Rediseño completo de la pagina al la version anterior
+This personal website was refactored from the ground using the web top technologies. These are the technologies used for this website:
 
-:D Mi primer pagina web.
+- Boostrap 5
+- React JS
+- React Icons
+- Sass
+
+## More about this website
+
+This webpage was my first personal project. So. I have some feelings about this project, and I finally finished the first version of this website.
+
+## Blog
+
+Soon. :D
