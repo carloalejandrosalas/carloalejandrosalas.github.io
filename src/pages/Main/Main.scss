@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+.Main {
+  background-image: url('../../assets/imgs/pinacate_image.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+
+  &__title {
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  &__info {
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  &__socialMedia {
+    font-size: 30px;
+  }
+
+  &__overlay {
+    background-color: rgba($color: #000, $alpha: 0.65);
+    width: 100%;
+    height: 100%;
+  }
+
+  &__container {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+  }
+}
+
+.btn-group-lg > .btn, .btn-lg {
+  margin-right: 12px;
+}
