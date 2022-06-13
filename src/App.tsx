@@ -1,4 +1,3 @@
-import "./App.scss";
 import Main from "./pages/Main";
 
 function App() {
