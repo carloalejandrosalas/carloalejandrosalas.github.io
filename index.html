@@ -1,0 +1,1352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#09090b" />
+
+    <!-- Primary SEO -->
+    <meta name="author" content="Carlo Salas" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta
+      name="description"
+      content="Full Stack Engineer with 10+ years building performant web apps — REST &amp; GraphQL APIs with Node.js and Fastify, React frontends, and PostgreSQL-backed services."
+    />
+    <meta
+      name="keywords"
+      content="Carlo Salas, Full Stack Engineer, JavaScript Developer, Node.js, Fastify, React, PostgreSQL, GraphQL, Prisma, Tailwind CSS, TypeScript, Web Developer Mexico"
+    />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://carloalejandrosalas.github.io/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
+
+    <title>Carlo Salas | Full Stack Engineer</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://carloalejandrosalas.github.io/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Carlo Salas" />
+    <meta property="og:title" content="Carlo Salas | Full Stack Engineer" />
+    <meta
+      property="og:description"
+      content="Full Stack Engineer with 10+ years building performant web apps — REST &amp; GraphQL APIs with Node.js and Fastify, React frontends, and PostgreSQL-backed services."
+    />
+    <meta
+      property="og:image"
+      content="https://carloalejandrosalas.github.io/favicon.svg"
+    />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@carloalexsalas" />
+    <meta name="twitter:creator" content="@carloalexsalas" />
+    <meta name="twitter:title" content="Carlo Salas | Full Stack Engineer" />
+    <meta
+      name="twitter:description"
+      content="Full Stack Engineer with 10+ years building performant web apps — REST &amp; GraphQL APIs with Node.js and Fastify, React frontends, and PostgreSQL-backed services."
+    />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Carlo Salas",
+        "url": "https://carloalejandrosalas.github.io/",
+        "jobTitle": "Full Stack Engineer",
+        "description": "Full Stack Engineer with 10+ years of experience building high-quality, performant web applications across the entire stack.",
+        "sameAs": [
+          "https://github.com/carloalejandrosalas",
+          "https://www.linkedin.com/in/carlo-alejandro-salas",
+          "https://twitter.com/carloalexsalas",
+          "https://www.instagram.com/carloalejandrosalas/"
+        ],
+        "knowsAbout": [
+          "JavaScript",
+          "TypeScript",
+          "Node.js",
+          "Fastify",
+          "React",
+          "GraphQL",
+          "PostgreSQL",
+          "Prisma",
+          "Tailwind CSS",
+          "Chakra UI",
+          "Jest",
+          "OIDC",
+          "REST APIs"
+        ]
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+              serif: ["Playfair Display", "ui-serif", "Georgia", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .bg-hero {
+        background-image: url("src/assets/imgs/pinacate_image.jpg");
+      }
+
+      .nav-link {
+        position: relative;
+        padding-bottom: 2px;
+        transition: color 0.2s ease;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: #facc15;
+        transition: width 0.25s ease;
+      }
+      .nav-link:hover::after,
+      .nav-link.nav-active::after {
+        width: 100%;
+      }
+      .nav-link.nav-active {
+        color: #facc15;
+      }
+
+      .social-link {
+        transition:
+          color 0.2s ease,
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+      .social-link:hover {
+        transform: translateY(-2px);
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.2rem 0.65rem;
+        border-radius: 9999px;
+        font-size: 0.72rem;
+        font-weight: 500;
+        border: 1px solid rgba(202, 138, 4, 0.35);
+        background-color: rgba(120, 53, 15, 0.12);
+        color: #fde047;
+        white-space: nowrap;
+      }
+
+      @keyframes fade-up {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-up {
+        animation: fade-up 0.7s ease both;
+      }
+      .d1 {
+        animation-delay: 0.1s;
+      }
+      .d2 {
+        animation-delay: 0.25s;
+      }
+      .d3 {
+        animation-delay: 0.4s;
+      }
+      .d4 {
+        animation-delay: 0.55s;
+      }
+      .d5 {
+        animation-delay: 0.75s;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.65s ease,
+          transform 0.65s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ── Navbar scroll states ───────────────────────────── */
+      #site-header {
+        background-color: transparent;
+        border-bottom: 1px solid transparent;
+        transition:
+          background-color 0.45s ease,
+          border-color 0.45s ease;
+      }
+      #site-header.scrolled {
+        background-color: rgba(9, 9, 11, 0.8);
+        border-color: rgb(24 24 27); /* zinc-900 */
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+      }
+
+      /* Logo title: hidden at top, revealed on scroll */
+      #nav-title,
+      #nav-dot {
+        opacity: 0;
+        transform: translateY(-5px);
+        transition:
+          opacity 0.4s ease,
+          transform 0.4s ease;
+      }
+      #site-header.scrolled #nav-title,
+      #site-header.scrolled #nav-dot {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Yellow accent overrides */
+      .nav-link:hover {
+        color: #facc15;
+      }
+
+      .social-link:hover {
+        color: #facc15;
+        border-color: #854d0e;
+      }
+
+      .social-card {
+        transition:
+          border-color 0.2s ease,
+          background-color 0.2s ease,
+          transform 0.15s ease;
+      }
+      .social-card:active {
+        transform: scale(0.97);
+      }
+
+      @keyframes link-flash {
+        0% {
+          opacity: 1;
+        }
+        25% {
+          opacity: 0.4;
+          color: #facc15;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .link-clicked {
+        animation: link-flash 0.4s ease;
+      }
+
+      /* Stack section subtle yellow tint */
+      #stack {
+        background-color: rgba(120, 53, 15, 0.04);
+      }
+
+      /* ── Splash screen ───────────────────────────────────── */
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 200;
+        background: #09090b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.7s ease;
+      }
+      #splash.splash-hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #splash-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+      @keyframes splash-logo-in {
+        from {
+          opacity: 0;
+          transform: scale(0.88) translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+      #splash-logo {
+        opacity: 0;
+        animation: splash-logo-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s
+          forwards;
+      }
+      @keyframes splash-bar {
+        0% {
+          width: 0;
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+        100% {
+          width: 56px;
+          opacity: 0.5;
+        }
+      }
+      #splash-bar {
+        height: 1px;
+        background: #facc15;
+        animation: splash-bar 1s ease 0.5s forwards;
+        width: 0;
+      }
+      @keyframes splash-dot-pulse {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.4);
+        }
+      }
+      #splash-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 9999px;
+        background: #facc15;
+        animation: splash-dot-pulse 1s ease 0.8s infinite;
+        opacity: 0;
+      }
+    </style>
+  </head>
+
+  <body class="font-sans bg-zinc-950 text-white antialiased">
+    <!-- ═══ SPLASH SCREEN ═══ -->
+    <div id="splash" role="presentation" aria-hidden="true">
+      <div id="splash-inner">
+        <!-- CS monogram -->
+        <svg
+          id="splash-logo"
+          viewBox="0 0 100 100"
+          width="96"
+          height="96"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <style>
+              @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600");
+            </style>
+          </defs>
+          <text
+            x="50"
+            y="68"
+            font-family="'Playfair Display', Georgia, serif"
+            font-size="52"
+            font-weight="600"
+            fill="#facc15"
+            text-anchor="middle"
+            letter-spacing="-1"
+          >
+            CS
+          </text>
+        </svg>
+        <!-- Progress bar -->
+        <div id="splash-bar"></div>
+        <!-- Pulsing dot -->
+        <div id="splash-dot"></div>
+      </div>
+    </div>
+    <!-- ═══ NAVBAR ═══ -->
+    <header id="site-header" class="fixed top-0 inset-x-0 z-50">
+      <!-- Scroll progress bar -->
+      <div
+        id="progress"
+        class="absolute bottom-0 left-0 h-[1px] bg-yellow-500 transition-[width] duration-100 ease-linear pointer-events-none"
+        style="width: 0%"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a
+          href="#home"
+          class="flex items-center gap-2 font-serif text-white text-sm font-semibold tracking-wide group"
+        >
+          <span
+            id="nav-dot"
+            class="w-1.5 h-1.5 rounded-full bg-yellow-500 shrink-0 transition-colors duration-200 group-hover:bg-yellow-300"
+          ></span>
+          <span id="nav-title">Carlo Salas</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <nav aria-label="Main navigation" class="hidden sm:block">
+          <ul
+            class="flex gap-8 list-none m-0 p-0 text-[11px] uppercase tracking-[0.2em] text-zinc-500"
+          >
+            <li>
+              <a href="#about" class="nav-link" data-section="about">About</a>
+            </li>
+            <li>
+              <a href="#stack" class="nav-link" data-section="stack">Stack</a>
+            </li>
+            <li>
+              <a href="#blog" class="nav-link" data-section="blog">Blog</a>
+            </li>
+            <li>
+              <a href="#connect" class="nav-link" data-section="connect"
+                >Connect</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="menu-btn"
+          class="sm:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] rounded-md text-zinc-500 hover:text-yellow-400 transition-colors"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span
+            class="w-5 h-px bg-current transition-all duration-300"
+            id="bar1"
+          ></span>
+          <span
+            class="w-5 h-px bg-current transition-all duration-300"
+            id="bar2"
+          ></span>
+          <span
+            class="w-5 h-px bg-current transition-all duration-300"
+            id="bar3"
+          ></span>
+        </button>
+      </div>
+
+      <!-- Mobile nav panel -->
+      <nav
+        id="mobile-nav"
+        class="sm:hidden hidden border-t border-zinc-900 bg-zinc-950/95"
+        aria-label="Mobile navigation"
+      >
+        <ul
+          class="flex flex-col list-none m-0 p-0 px-6 py-2 text-[11px] uppercase tracking-[0.2em] text-zinc-500"
+        >
+          <li>
+            <a
+              href="#about"
+              class="nav-link flex py-4 border-b border-zinc-900/60"
+              data-section="about"
+              onclick="closeMenu()"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#stack"
+              class="nav-link flex py-4 border-b border-zinc-900/60"
+              data-section="stack"
+              onclick="closeMenu()"
+              >Stack</a
+            >
+          </li>
+          <li>
+            <a
+              href="#blog"
+              class="nav-link flex py-4 border-b border-zinc-900/60"
+              data-section="blog"
+              onclick="closeMenu()"
+              >Blog</a
+            >
+          </li>
+          <li>
+            <a
+              href="#connect"
+              class="nav-link flex py-4"
+              data-section="connect"
+              onclick="closeMenu()"
+              >Connect</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ═══ HERO ═══ -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center justify-center pt-14 overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-hero bg-cover bg-center bg-no-repeat opacity-[0.15] pointer-events-none"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-zinc-950/10 to-zinc-950 pointer-events-none"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="relative z-10 max-w-2xl mx-auto text-center px-6 py-16 sm:py-24"
+      >
+        <p
+          class="fade-up text-[10px] uppercase tracking-[0.3em] text-yellow-600 mb-6"
+        >
+          Full Stack Engineer
+        </p>
+
+        <h1
+          class="fade-up d1 font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-tight mb-5"
+        >
+          Carlo<br />Alejandro Salas
+        </h1>
+
+        <p
+          class="fade-up d2 text-zinc-400 text-base sm:text-lg leading-relaxed mb-10 max-w-lg mx-auto"
+        >
+          10+ years crafting high-quality web applications — from resilient
+          back-end APIs to pixel-perfect front-end experiences.
+        </p>
+
+        <div class="fade-up d2 flex justify-center items-center gap-2 mb-10">
+          <span class="w-1 h-1 rounded-full bg-yellow-600"></span>
+          <span class="w-16 h-px bg-yellow-900/40"></span>
+          <span class="w-1 h-1 rounded-full bg-yellow-600"></span>
+        </div>
+
+        <!-- Social icons -->
+        <nav class="fade-up d3" aria-label="Social links">
+          <ul class="flex justify-center gap-3 list-none m-0 p-0">
+            <li>
+              <a
+                href="https://github.com/carloalejandrosalas"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+                class="social-link flex w-11 h-11 items-center justify-center rounded-full border border-zinc-800 text-zinc-500 hover:text-white hover:border-zinc-600"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-[18px] h-[18px]"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/carlo-alejandro-salas"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                class="social-link flex w-11 h-11 items-center justify-center rounded-full border border-zinc-800 text-zinc-500 hover:text-white hover:border-zinc-600"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-[18px] h-[18px]"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/carloalexsalas"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="X / Twitter"
+                class="social-link flex w-11 h-11 items-center justify-center rounded-full border border-zinc-800 text-zinc-500 hover:text-white hover:border-zinc-600"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-[18px] h-[18px]"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/carloalejandrosalas/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                class="social-link flex w-11 h-11 items-center justify-center rounded-full border border-zinc-800 text-zinc-500 hover:text-white hover:border-zinc-600"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-[18px] h-[18px]"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Scroll cue -->
+        <div
+          class="fade-up d5 mt-16 flex flex-col items-center gap-2 text-yellow-900"
+        >
+          <span class="text-[10px] uppercase tracking-widest">Scroll</span>
+          <svg
+            class="w-4 h-4 animate-bounce"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ABOUT ═══ -->
+    <section id="about" class="py-20 sm:py-28 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="reveal flex items-center gap-4 mb-14">
+          <span class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
+            >01 &mdash; About</span
+          >
+          <span class="flex-1 h-px bg-zinc-900"></span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          <!-- Narrative -->
+          <div class="reveal">
+            <h2
+              class="font-serif text-3xl sm:text-4xl text-white mb-6 leading-snug"
+            >
+              Building for the web,<br />end&#8202;to&#8202;end.
+            </h2>
+            <div class="space-y-4 text-zinc-400 text-[0.95rem] leading-relaxed">
+              <p>
+                I'm a Full Stack Developer with 10+ years of experience across
+                the entire web stack. I've worked with SQL databases — MySQL,
+                PostgreSQL, and SQL Server — and developed landing pages and
+                REST APIs in PHP for both web and mobile clients.
+              </p>
+              <p>
+                On the front end I've built single-page applications using
+                Angular&nbsp;2+, React.js, and Vue.js, always aiming for clean
+                architecture and great user experience.
+              </p>
+              <p>
+                Beyond shipping code, I've mentored and trained new team members
+                and interns on in-demand technologies, engineering best
+                practices, effective workflows, and collaborative teamwork.
+              </p>
+            </div>
+          </div>
+
+          <!-- Highlight cards -->
+          <div class="reveal space-y-3">
+            <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <p
+                class="text-[10px] uppercase tracking-widest text-yellow-600 mb-2"
+              >
+                Databases
+              </p>
+              <p class="text-zinc-300 text-sm">
+                MySQL &middot; PostgreSQL &middot; SQL Server
+              </p>
+            </div>
+            <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <p
+                class="text-[10px] uppercase tracking-widest text-yellow-600 mb-2"
+              >
+                Back end
+              </p>
+              <p class="text-zinc-300 text-sm">
+                PHP &mdash; landing pages &amp; REST APIs for web and mobile
+              </p>
+            </div>
+            <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <p
+                class="text-[10px] uppercase tracking-widest text-yellow-600 mb-2"
+              >
+                Front end SPAs
+              </p>
+              <p class="text-zinc-300 text-sm">
+                Angular 2+ &middot; React.js &middot; Vue.js
+              </p>
+            </div>
+            <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <p
+                class="text-[10px] uppercase tracking-widest text-yellow-600 mb-2"
+              >
+                Mentoring &amp; Leadership
+              </p>
+              <p class="text-zinc-300 text-sm">
+                Training new team members and interns on best practices, modern
+                tooling, and effective teamwork.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CURRENT STACK ═══ -->
+    <section
+      id="stack"
+      class="py-20 sm:py-28 px-6 bg-zinc-900/20 border-t border-b border-zinc-900"
+    >
+      <div class="max-w-5xl mx-auto">
+        <div class="reveal flex items-center gap-4 mb-14">
+          <span class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
+            >02 &mdash; Current Stack</span
+          >
+          <span class="flex-1 h-px bg-zinc-900"></span>
+        </div>
+
+        <div class="reveal mb-10">
+          <h2
+            class="font-serif text-3xl sm:text-4xl text-white mb-3 leading-snug"
+          >
+            What I work with today.
+          </h2>
+          <p class="text-zinc-500 text-sm">
+            Technologies I use day-to-day in my current role.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div
+            class="reveal rounded-xl border border-zinc-800 bg-zinc-900/40 p-6"
+          >
+            <p
+              class="text-[10px] uppercase tracking-widest text-yellow-600 mb-4"
+            >
+              Runtime &amp; Server
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">Node.js 20+</span>
+              <span class="badge">Fastify</span>
+            </div>
+          </div>
+
+          <div
+            class="reveal rounded-xl border border-zinc-800 bg-zinc-900/40 p-6"
+          >
+            <p
+              class="text-[10px] uppercase tracking-widest text-yellow-600 mb-4"
+            >
+              Frontend
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">React.js</span>
+              <span class="badge">Tailwind CSS</span>
+              <span class="badge">Chakra UI</span>
+            </div>
+          </div>
+
+          <div
+            class="reveal rounded-xl border border-zinc-800 bg-zinc-900/40 p-6"
+          >
+            <p
+              class="text-[10px] uppercase tracking-widest text-yellow-600 mb-4"
+            >
+              Testing
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">Jest</span>
+              <span class="badge">React Testing Library</span>
+            </div>
+          </div>
+
+          <div
+            class="reveal rounded-xl border border-zinc-800 bg-zinc-900/40 p-6"
+          >
+            <p
+              class="text-[10px] uppercase tracking-widest text-yellow-600 mb-4"
+            >
+              Database &amp; ORM
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">PostgreSQL</span>
+              <span class="badge">Prisma</span>
+            </div>
+          </div>
+
+          <div
+            class="reveal rounded-xl border border-zinc-800 bg-zinc-900/40 p-6"
+          >
+            <p
+              class="text-[10px] uppercase tracking-widest text-yellow-600 mb-4"
+            >
+              APIs &amp; Data
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">GraphQL</span>
+              <span class="badge">REST</span>
+              <span class="badge">JSON</span>
+              <span class="badge">XML</span>
+            </div>
+          </div>
+
+          <div
+            class="reveal rounded-xl border border-zinc-800 bg-zinc-900/40 p-6"
+          >
+            <p
+              class="text-[10px] uppercase tracking-widest text-yellow-600 mb-4"
+            >
+              Auth &amp; Identity
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">OIDC</span>
+              <span class="badge">OpenID</span>
+              <span class="badge">JWT/Cookies</span>
+              <span class="badge">Refresh tokens</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BLOG & NEWSLETTER (COMING SOON) ═══ -->
+    <section id="blog" class="py-20 sm:py-28 px-6 border-t border-zinc-900">
+      <div class="max-w-5xl mx-auto">
+        <div class="reveal flex items-center gap-4 mb-14">
+          <span class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
+            >03 &mdash; Coming Soon</span
+          >
+          <span class="flex-1 h-px bg-zinc-900"></span>
+        </div>
+
+        <div class="reveal mb-12">
+          <h2
+            class="font-serif text-3xl sm:text-4xl text-white mb-3 leading-snug"
+          >
+            What's coming.
+          </h2>
+          <p class="text-zinc-500 text-sm">
+            More ways to stay connected and keep learning.
+          </p>
+        </div>
+
+        <div class="reveal grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Newsletter -->
+          <div
+            class="relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/40 p-6"
+          >
+            <span
+              class="absolute top-4 right-4 text-[9px] uppercase tracking-widest text-yellow-600 border border-yellow-900/50 bg-yellow-950/20 px-2.5 py-0.5 rounded-full"
+              >Coming soon</span
+            >
+            <div
+              class="w-10 h-10 flex items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900 mb-5"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                class="w-5 h-5 text-yellow-600"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                />
+              </svg>
+            </div>
+            <h3 class="text-white text-base font-semibold mb-2">Newsletter</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Curated insights on full-stack development, tooling, and
+              engineering practices &mdash; straight to your inbox.
+            </p>
+          </div>
+
+          <!-- Blog -->
+          <div
+            class="relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/40 p-6"
+          >
+            <span
+              class="absolute top-4 right-4 text-[9px] uppercase tracking-widest text-yellow-600 border border-yellow-900/50 bg-yellow-950/20 px-2.5 py-0.5 rounded-full"
+              >Coming soon</span
+            >
+            <div
+              class="w-10 h-10 flex items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900 mb-5"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                class="w-5 h-5 text-yellow-600"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                />
+              </svg>
+            </div>
+            <h3 class="text-white text-base font-semibold mb-2">
+              Engineering Blog
+            </h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Deep dives into architecture decisions, lessons learned, and the
+              craft of building production software.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CONNECT / FOOTER ═══ -->
+    <footer id="connect" class="border-t border-zinc-900">
+      <!-- CTA area -->
+      <div class="py-20 sm:py-28 px-6">
+        <div class="max-w-5xl mx-auto">
+          <div class="reveal flex items-center gap-4 mb-14">
+            <span
+              class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
+              >04 &mdash; Connect</span
+            >
+            <span class="flex-1 h-px bg-zinc-900"></span>
+          </div>
+
+          <div class="reveal mb-14">
+            <h2
+              class="font-serif text-4xl sm:text-5xl text-white mb-4 leading-tight"
+            >
+              Let's build<br />something great.
+            </h2>
+            <p class="text-zinc-500 text-sm max-w-sm">
+              Find me on any of these platforms and let's start a conversation.
+            </p>
+          </div>
+
+          <!-- Social cards grid -->
+          <div class="reveal grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <!-- GitHub -->
+            <a
+              href="https://github.com/carloalejandrosalas"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              class="social-card group flex flex-col gap-3 rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 hover:border-yellow-900 hover:bg-zinc-900/70"
+            >
+              <div class="flex items-start justify-between">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-5 h-5 text-zinc-400 group-hover:text-yellow-400 transition-colors duration-200"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="w-3.5 h-3.5 text-zinc-700 group-hover:text-yellow-600 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="text-white text-sm font-medium mb-0.5">GitHub</p>
+                <p class="text-zinc-600 text-xs">@carloalejandrosalas</p>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/carlo-alejandro-salas"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              class="social-card group flex flex-col gap-3 rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 hover:border-yellow-900 hover:bg-zinc-900/70"
+            >
+              <div class="flex items-start justify-between">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-5 h-5 text-zinc-400 group-hover:text-yellow-400 transition-colors duration-200"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="w-3.5 h-3.5 text-zinc-700 group-hover:text-yellow-600 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="text-white text-sm font-medium mb-0.5">LinkedIn</p>
+                <p class="text-zinc-600 text-xs">carlo-alejandro-salas</p>
+              </div>
+            </a>
+
+            <!-- X / Twitter -->
+            <a
+              href="https://twitter.com/carloalexsalas"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="X / Twitter"
+              class="social-card group flex flex-col gap-3 rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 hover:border-yellow-900 hover:bg-zinc-900/70"
+            >
+              <div class="flex items-start justify-between">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-5 h-5 text-zinc-400 group-hover:text-yellow-400 transition-colors duration-200"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="w-3.5 h-3.5 text-zinc-700 group-hover:text-yellow-600 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="text-white text-sm font-medium mb-0.5">X / Twitter</p>
+                <p class="text-zinc-600 text-xs">@carloalexsalas</p>
+              </div>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/carloalejandrosalas/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              class="social-card group flex flex-col gap-3 rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 hover:border-yellow-900 hover:bg-zinc-900/70"
+            >
+              <div class="flex items-start justify-between">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-5 h-5 text-zinc-400 group-hover:text-yellow-400 transition-colors duration-200"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="w-3.5 h-3.5 text-zinc-700 group-hover:text-yellow-600 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="text-white text-sm font-medium mb-0.5">Instagram</p>
+                <p class="text-zinc-600 text-xs">@carloalejandrosalas</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-zinc-900 px-6 py-6">
+        <div
+          class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <a
+            href="#home"
+            class="flex items-center gap-2 font-serif text-white text-sm font-semibold tracking-wide group"
+          >
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-yellow-500 shrink-0 transition-colors duration-200 group-hover:bg-yellow-300"
+            ></span>
+            Carlo Salas
+          </a>
+          <nav aria-label="Footer navigation">
+            <ul
+              class="flex gap-6 list-none m-0 p-0 text-[10px] uppercase tracking-widest text-zinc-600"
+            >
+              <li>
+                <a href="#about" class="nav-link" data-section="about">About</a>
+              </li>
+              <li>
+                <a href="#stack" class="nav-link" data-section="stack">Stack</a>
+              </li>
+              <li>
+                <a href="#blog" class="nav-link" data-section="blog">Blog</a>
+              </li>
+              <li>
+                <a href="#connect" class="nav-link" data-section="connect"
+                  >Connect</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <p class="text-zinc-700 text-[10px] tracking-wider">
+            &copy; <span id="year"></span> Carlo Salas
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Copyright year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // ── Scroll reveal ──────────────────────────────────────────
+      const revealObserver = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              revealObserver.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.12 },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => revealObserver.observe(el));
+
+      // ── Scroll progress bar + navbar state ──────────────────
+      const progressBar = document.getElementById("progress");
+      const siteHeader = document.getElementById("site-header");
+      const heroSection = document.getElementById("home");
+
+      function onScroll() {
+        const scrolled = window.scrollY;
+        const maxScroll =
+          document.documentElement.scrollHeight - window.innerHeight;
+
+        // Progress bar
+        progressBar.style.width =
+          maxScroll > 0 ? (scrolled / maxScroll) * 100 + "%" : "0%";
+
+        // Navbar: switch to frosted glass once past the hero
+        const pastHero = scrolled > heroSection.offsetHeight - 80;
+        siteHeader.classList.toggle("scrolled", pastHero);
+
+        // Active section: activate "connect" near page bottom
+        const nearBottom =
+          window.innerHeight + scrolled >=
+          document.documentElement.scrollHeight - 80;
+        if (nearBottom) setActive("connect");
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll(); // initialise on load
+
+      // ── Active section detection ───────────────────────────────
+      const navLinks = document.querySelectorAll(".nav-link[data-section]");
+      const sections = document.querySelectorAll("section[id], footer[id]");
+
+      function setActive(id) {
+        navLinks.forEach((link) => {
+          link.classList.toggle("nav-active", link.dataset.section === id);
+        });
+      }
+
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) setActive(entry.target.id);
+          });
+        },
+        { threshold: 0.3, rootMargin: "-10% 0px -55% 0px" },
+      );
+      sections.forEach((s) => sectionObserver.observe(s));
+
+      // Fallback: activate "connect" when scrolled to the bottom
+      // (handled inside onScroll above)
+
+      // ── Slow smooth scroll + flash on anchor links ────────────
+      const NAV_HEIGHT = 56;
+
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function slowScrollTo(targetY, duration = 900) {
+        const startY = window.scrollY;
+        const distance = targetY - startY;
+        let startTime = null;
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          const elapsed = ts - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          window.scrollTo(0, startY + distance * easeInOutCubic(progress));
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", function (e) {
+          const id = this.getAttribute("href").slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+
+          // Scroll — offset by navbar height, clamp to 0
+          const targetY = Math.max(
+            0,
+            target.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT,
+          );
+          slowScrollTo(targetY);
+
+          // Flash animation
+          this.classList.remove("link-clicked");
+          void this.offsetWidth;
+          this.classList.add("link-clicked");
+          this.addEventListener(
+            "animationend",
+            () => this.classList.remove("link-clicked"),
+            { once: true },
+          );
+        });
+      });
+
+      // ── Mobile menu ────────────────────────────────────────────
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileNav = document.getElementById("mobile-nav");
+      const bar1 = document.getElementById("bar1");
+      const bar2 = document.getElementById("bar2");
+      const bar3 = document.getElementById("bar3");
+
+      function closeMenu() {
+        mobileNav.classList.add("hidden");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute("aria-label", "Open navigation menu");
+        bar1.style.transform = "";
+        bar2.style.opacity = "";
+        bar3.style.transform = "";
+      }
+
+      menuBtn.addEventListener("click", () => {
+        const isOpen = !mobileNav.classList.contains("hidden");
+        if (isOpen) {
+          closeMenu();
+        } else {
+          mobileNav.classList.remove("hidden");
+          menuBtn.setAttribute("aria-expanded", "true");
+          menuBtn.setAttribute("aria-label", "Close navigation menu");
+          bar1.style.transform = "translateY(6px) rotate(45deg)";
+          bar2.style.opacity = "0";
+          bar3.style.transform = "translateY(-6px) rotate(-45deg)";
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!menuBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+          closeMenu();
+        }
+      });
+
+      // ── Splash screen ─────────────────────────────────────────
+      (function () {
+        const splash = document.getElementById("splash");
+        if (!splash) return;
+        function hideSplash() {
+          splash.classList.add("splash-hide");
+          splash.addEventListener("transitionend", () => splash.remove(), {
+            once: true,
+          });
+        }
+        // logo-in 0.75s + hold + bar 1s → dismiss at 1.8s
+        setTimeout(hideSplash, 1800);
+      })();
+    </script>
+  </body>
+</html>
