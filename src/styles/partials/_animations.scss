@@ -1,0 +1,62 @@
+// ── Fade-up (hero entrance) ──────────────────────────────────
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.7s ease both;
+}
+.d1 {
+  animation-delay: 0.1s;
+}
+.d2 {
+  animation-delay: 0.25s;
+}
+.d3 {
+  animation-delay: 0.4s;
+}
+.d4 {
+  animation-delay: 0.55s;
+}
+.d5 {
+  animation-delay: 0.75s;
+}
+
+// ── Scroll reveal ────────────────────────────────────────────
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ── Link click flash ─────────────────────────────────────────
+@keyframes link-flash {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.4;
+    color: #facc15;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.link-clicked {
+  animation: link-flash 0.4s ease;
+}

@@ -1,0 +1,51 @@
+@use "variables" as v;
+
+// ── Hero background image ─────────────────────────────────────
+.bg-hero {
+  background-image: url("../../assets/imgs/pinacate_image.jpg");
+}
+
+// ── Tech badge ───────────────────────────────────────────────
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border: 1px solid rgba(202, 138, 4, 0.35);
+  background-color: rgba(120, 53, 15, 0.12);
+  color: v.$y-300;
+}
+
+// ── Social links (hero icon buttons) ─────────────────────────
+.social-link {
+  transition:
+    color v.$t-fast,
+    border-color v.$t-fast,
+    transform v.$t-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+    color: v.$y-400;
+    border-color: v.$y-800;
+  }
+}
+
+// ── Social cards (footer) ────────────────────────────────────
+.social-card {
+  transition:
+    border-color v.$t-fast,
+    background-color v.$t-fast,
+    transform 0.15s ease;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+// ── Stack section tint ───────────────────────────────────────
+#stack {
+  background-color: rgba(120, 53, 15, 0.04);
+}

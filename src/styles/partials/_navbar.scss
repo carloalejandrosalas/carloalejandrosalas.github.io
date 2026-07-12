@@ -1,0 +1,62 @@
+@use "variables" as v;
+
+// ── Header scroll states ─────────────────────────────────────
+#site-header {
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.45s ease,
+    border-color 0.45s ease;
+
+  &.scrolled {
+    background-color: rgba(9, 9, 11, 0.8);
+    border-color: v.$z-900;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+}
+
+// ── Logo title + dot: hidden at top, revealed on scroll ──────
+#nav-title,
+#nav-dot {
+  opacity: 0;
+  transform: translateY(-5px);
+  transition:
+    opacity v.$t-med,
+    transform v.$t-med;
+}
+
+#site-header.scrolled {
+  #nav-title,
+  #nav-dot {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ── Nav link with animated underline ─────────────────────────
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+  transition: color v.$t-fast;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: v.$y-400;
+    transition: width 0.25s ease;
+  }
+
+  &:hover,
+  &.nav-active {
+    color: v.$y-400;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
