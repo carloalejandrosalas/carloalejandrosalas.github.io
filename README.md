@@ -8,13 +8,14 @@ Personal portfolio and resume page for **Carlo Alejandro Salas** — Full Stack 
 
 ## Tech Stack
 
-| Tool | Version | Purpose |
-|------|---------|---------|
-| [Vite](https://vite.dev) | 8.x | Build tool & dev server with HMR |
-| [Tailwind CSS v4](https://tailwindcss.com) | 4.x | Utility-first CSS via `@tailwindcss/vite` plugin |
-| [SASS](https://sass-lang.com) | 1.x | Custom styles, animations, and component partials |
-| [pnpm](https://pnpm.io) | 10.x | Fast, disk-efficient package manager |
-| [GitHub Actions](https://docs.github.com/en/actions) | — | CI/CD: auto-deploy to GitHub Pages on push to `main` |
+| Tool                                                 | Version | Purpose                                              |
+| ---------------------------------------------------- | ------- | ---------------------------------------------------- |
+| [Vite](https://vite.dev)                             | 8.x     | Build tool & dev server with HMR                     |
+| [Tailwind CSS v4](https://tailwindcss.com)           | 4.x     | Utility-first CSS via `@tailwindcss/vite` plugin     |
+| [SASS](https://sass-lang.com)                        | 1.x     | Custom styles, animations, and component partials    |
+| [pnpm](https://pnpm.io)                              | 10.x    | Fast, disk-efficient package manager                 |
+| [GitHub Actions](https://docs.github.com/en/actions) | —       | CI/CD: auto-deploy to GitHub Pages on push to `main` |
+| [Node.js](https://nodejs.org)                        | 24.x    | Runtime (required ≥ 24)                              |
 
 ---
 
@@ -54,7 +55,9 @@ Personal portfolio and resume page for **Carlo Alejandro Salas** — Full Stack 
 CSS is split between **Tailwind v4** (utility classes) and **SASS partials** (custom component logic):
 
 ### `src/styles/tailwind.css`
+
 Imports Tailwind v4 and declares the custom font theme:
+
 ```css
 @import "tailwindcss";
 
@@ -66,13 +69,13 @@ Imports Tailwind v4 and declares the custom font theme:
 
 ### `src/styles/partials/`
 
-| Partial | Responsibility |
-|---------|---------------|
-| `_variables.scss` | SASS variables for the yellow/zinc palette (`$y-400`, `$z-950`, …) and timing constants (`$t-fast`, `$t-slow`) |
-| `_animations.scss` | `fade-up` hero entrance, `.reveal` scroll reveal, `.link-clicked` flash |
-| `_navbar.scss` | `#site-header` transparent→frosted-glass transition on scroll; `#nav-title` / `#nav-dot` reveal; `.nav-link` animated underline and `.nav-active` state |
-| `_splash.scss` | Full-screen splash overlay with logo scale-in, progress bar grow, and pulsing dot |
-| `_components.scss` | `.bg-hero` background image, `.badge` tech pill, `.social-link` hover lift, `.social-card` press effect |
+| Partial            | Responsibility                                                                                                                                          |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `_variables.scss`  | SASS variables for the yellow/zinc palette (`$y-400`, `$z-950`, …) and timing constants (`$t-fast`, `$t-slow`)                                          |
+| `_animations.scss` | `fade-up` hero entrance, `.reveal` scroll reveal, `.link-clicked` flash                                                                                 |
+| `_navbar.scss`     | `#site-header` transparent→frosted-glass transition on scroll; `#nav-title` / `#nav-dot` reveal; `.nav-link` animated underline and `.nav-active` state |
+| `_splash.scss`     | Full-screen splash overlay with logo scale-in, progress bar grow, and pulsing dot                                                                       |
+| `_components.scss` | `.bg-hero` background image, `.badge` tech pill, `.social-link` hover lift, `.social-card` press effect                                                 |
 
 ---
 
@@ -80,14 +83,14 @@ Imports Tailwind v4 and declares the custom font theme:
 
 All JS is vanilla, no framework:
 
-| Feature | Details |
-|---------|---------|
-| **Scroll reveal** | `IntersectionObserver` adds `.visible` to `.reveal` elements as they enter the viewport |
-| **Navbar state** | Single `onScroll` handler updates the scroll progress bar, toggles `.scrolled` on the header once past the hero, and activates the "connect" link near the bottom |
-| **Active section** | `IntersectionObserver` on each `section[id]` / `footer[id]` updates `.nav-active` on the matching nav link |
-| **Slow scroll** | Custom 900 ms `easeInOutCubic` animation intercepting all `a[href^="#"]` clicks, offset by navbar height |
-| **Mobile menu** | Hamburger ↔ X animation toggling the mobile nav panel with `aria-expanded` |
-| **Splash screen** | Auto-dismissed after 1.8 s with a CSS opacity fade and DOM removal |
+| Feature            | Details                                                                                                                                                           |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Scroll reveal**  | `IntersectionObserver` adds `.visible` to `.reveal` elements as they enter the viewport                                                                           |
+| **Navbar state**   | Single `onScroll` handler updates the scroll progress bar, toggles `.scrolled` on the header once past the hero, and activates the "connect" link near the bottom |
+| **Active section** | `IntersectionObserver` on each `section[id]` / `footer[id]` updates `.nav-active` on the matching nav link                                                        |
+| **Slow scroll**    | Custom 900 ms `easeInOutCubic` animation intercepting all `a[href^="#"]` clicks, offset by navbar height                                                          |
+| **Mobile menu**    | Hamburger ↔ X animation toggling the mobile nav panel with `aria-expanded`                                                                                        |
+| **Splash screen**  | Auto-dismissed after 1.8 s with a CSS opacity fade and DOM removal                                                                                                |
 
 ---
 
@@ -114,13 +117,16 @@ pnpm preview
 Pushes to `main` trigger the GitHub Actions workflow (`.github/workflows/deploy.yml`), which:
 
 1. Installs deps with `pnpm install --frozen-lockfile`
-2. Builds with `vite build`
+2. Builds with `vite build` (Node 24)
 3. Uploads `dist/` as the Pages artifact
 4. Deploys via `actions/deploy-pages`
+
+> **Node version:** runners default to Node 24. See [GitHub changelog](https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/) for details.
 
 > **Repo setting required:** Go to **Settings → Pages → Source** and select **GitHub Actions**.
 
 You can also deploy manually:
+
 ```bash
 pnpm deploy   # builds + pushes dist/ to gh-pages branch
 ```
