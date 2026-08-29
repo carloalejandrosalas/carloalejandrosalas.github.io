@@ -159,43 +159,76 @@
             class="flex gap-8 list-none m-0 p-0 text-[11px] uppercase tracking-[0.2em] text-zinc-500"
           >
             <li>
-              <a href="#about" class="nav-link" data-section="about">About</a>
+              <a
+                href="#about"
+                class="nav-link"
+                data-section="about"
+                data-i18n="nav.about"
+                >About</a
+              >
             </li>
             <li>
-              <a href="#stack" class="nav-link" data-section="stack">Stack</a>
+              <a
+                href="#stack"
+                class="nav-link"
+                data-section="stack"
+                data-i18n="nav.stack"
+                >Stack</a
+              >
             </li>
             <li>
-              <a href="#blog" class="nav-link" data-section="blog">Blog</a>
+              <a
+                href="#blog"
+                class="nav-link"
+                data-section="blog"
+                data-i18n="nav.blog"
+                >Blog</a
+              >
             </li>
             <li>
-              <a href="#connect" class="nav-link" data-section="connect"
+              <a
+                href="#connect"
+                class="nav-link"
+                data-section="connect"
+                data-i18n="nav.connect"
                 >Connect</a
               >
             </li>
           </ul>
         </nav>
 
-        <!-- Mobile hamburger -->
-        <button
-          id="menu-btn"
-          class="sm:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] rounded-md text-zinc-500 hover:text-yellow-400 transition-colors"
-          aria-label="Open navigation menu"
-          aria-expanded="false"
-          aria-controls="mobile-nav"
-        >
-          <span
-            class="w-5 h-px bg-current transition-all duration-300"
-            id="bar1"
-          ></span>
-          <span
-            class="w-5 h-px bg-current transition-all duration-300"
-            id="bar2"
-          ></span>
-          <span
-            class="w-5 h-px bg-current transition-all duration-300"
-            id="bar3"
-          ></span>
-        </button>
+        <!-- Language toggle + mobile hamburger -->
+        <div class="flex items-center gap-3">
+          <button
+            id="lang-toggle"
+            class="text-[11px] font-medium uppercase tracking-[0.15em] text-zinc-500 hover:text-yellow-400 transition-colors px-2.5 py-1 border border-zinc-800 rounded-md hover:border-yellow-900"
+            aria-label="Switch language"
+          >
+            ES
+          </button>
+
+          <!-- Mobile hamburger -->
+          <button
+            id="menu-btn"
+            class="sm:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] rounded-md text-zinc-500 hover:text-yellow-400 transition-colors"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
+            <span
+              class="w-5 h-px bg-current transition-all duration-300"
+              id="bar1"
+            ></span>
+            <span
+              class="w-5 h-px bg-current transition-all duration-300"
+              id="bar2"
+            ></span>
+            <span
+              class="w-5 h-px bg-current transition-all duration-300"
+              id="bar3"
+            ></span>
+          </button>
+        </div>
       </div>
 
       <!-- Mobile nav panel -->
@@ -212,6 +245,7 @@
               href="#about"
               class="nav-link flex py-4 border-b border-zinc-900/60"
               data-section="about"
+              data-i18n="nav.about"
               onclick="closeMenu()"
               >About</a
             >
@@ -221,6 +255,7 @@
               href="#stack"
               class="nav-link flex py-4 border-b border-zinc-900/60"
               data-section="stack"
+              data-i18n="nav.stack"
               onclick="closeMenu()"
               >Stack</a
             >
@@ -230,6 +265,7 @@
               href="#blog"
               class="nav-link flex py-4 border-b border-zinc-900/60"
               data-section="blog"
+              data-i18n="nav.blog"
               onclick="closeMenu()"
               >Blog</a
             >
@@ -239,6 +275,7 @@
               href="#connect"
               class="nav-link flex py-4"
               data-section="connect"
+              data-i18n="nav.connect"
               onclick="closeMenu()"
               >Connect</a
             >
@@ -266,6 +303,7 @@
       >
         <p
           class="fade-up text-[10px] uppercase tracking-[0.3em] text-yellow-600 mb-6"
+          data-i18n="hero.role"
         >
           Full Stack Engineer
         </p>
@@ -278,12 +316,14 @@
 
         <p
           class="fade-up d1 text-[11px] uppercase tracking-[0.2em] text-zinc-500 mb-5"
+          data-i18n="hero.tagline"
         >
           TypeScript Fanatic &middot; Professional Bug Whisperer
         </p>
 
         <p
           class="fade-up d2 text-zinc-400 text-base sm:text-lg leading-relaxed mb-10 max-w-lg mx-auto"
+          data-i18n="hero.desc"
         >
           10+ years turning coffee into web applications — back-end APIs that
           don't break at 3am &amp; front-end UIs that make designers smile. ☕
@@ -385,7 +425,11 @@
         <div
           class="fade-up d5 mt-16 flex flex-col items-center gap-2 text-yellow-900"
         >
-          <span class="text-[10px] uppercase tracking-widest">Scroll</span>
+          <span
+            class="text-[10px] uppercase tracking-widest"
+            data-i18n="hero.scroll"
+            >Scroll</span
+          >
           <svg
             class="w-4 h-4 animate-bounce"
             viewBox="0 0 24 24"
@@ -408,8 +452,10 @@
     <section id="about" class="py-20 sm:py-28 px-6">
       <div class="max-w-5xl mx-auto">
         <div class="reveal flex items-center gap-4 mb-14">
-          <span class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
-            >01 &mdash; About</span
+          <span
+            class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
+            data-i18n="about.label"
+            >01 — About</span
           >
           <span class="flex-1 h-px bg-zinc-900"></span>
         </div>
@@ -419,20 +465,33 @@
           <div class="reveal">
             <h2
               class="font-serif text-3xl sm:text-4xl text-white mb-6 leading-snug"
+              data-i18n-html="about.heading"
             >
-              Building for the web,<br />end&#8202;to&#8202;end.
+              Engineer by craft,<br />mentor by choice.
             </h2>
             <p
               class="text-[10px] uppercase tracking-widest text-yellow-600 mb-4"
+              data-i18n="about.bg.label"
             >
               Background
             </p>
             <div class="space-y-3 text-zinc-400 text-[0.95rem] leading-relaxed">
-              <p>10+ years across the full web stack.</p>
-              <p>Back-end APIs that hold up at 3am.</p>
-              <p>Front-end UIs that make designers happy.</p>
-              <p>SQL fluent: MySQL &middot; PostgreSQL &middot; SQL Server.</p>
-              <p>REST APIs in PHP for web &amp; mobile.</p>
+              <p data-i18n="about.bg.1">
+                Based in Mexico 🇲🇽, collaborating with global teams.
+              </p>
+              <p data-i18n="about.bg.2">
+                Started with PHP &amp; MySQL; evolved through the full JS
+                ecosystem.
+              </p>
+              <p data-i18n="about.bg.3">
+                Led front-end migrations from legacy codebases to modern SPAs.
+              </p>
+              <p data-i18n="about.bg.4">
+                Comfortable from DB schema design to CI/CD pipelines.
+              </p>
+              <p data-i18n="about.bg.5">
+                Strong advocate for type safety — TypeScript everywhere.
+              </p>
             </div>
           </div>
 
@@ -441,35 +500,48 @@
             <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
               <p
                 class="text-[10px] uppercase tracking-widest text-yellow-600 mb-2"
+                data-i18n="about.drives.label"
               >
-                What drives me
+                Engineering values
               </p>
               <ul class="text-zinc-300 text-sm space-y-1.5">
-                <li>SPAs with Angular 2+, React.js &amp; Vue.js</li>
-                <li>Obsessed with clean architecture &amp; great UX</li>
-                <li>Mentored devs and interns on modern tooling</li>
-                <li>Deep PR reviews, not just approvals</li>
-                <li>Shipping with confidence, always</li>
+                <li data-i18n="about.drives.1">
+                  Code the next dev will thank you for
+                </li>
+                <li data-i18n="about.drives.2">
+                  Tests are not optional — they are documentation
+                </li>
+                <li data-i18n="about.drives.3">
+                  Mentored junior devs and interns on modern tooling
+                </li>
+                <li data-i18n="about.drives.4">
+                  Deep PR reviews — every line matters
+                </li>
+                <li data-i18n="about.drives.5">
+                  Ship fast, never at the cost of quality
+                </li>
               </ul>
             </div>
             <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
               <p
                 class="text-[10px] uppercase tracking-widest text-yellow-600 mb-2"
+                data-i18n="about.db.label"
               >
-                Databases
+                Beyond the code
               </p>
-              <p class="text-zinc-300 text-sm">
-                MySQL &middot; PostgreSQL &middot; SQL Server
+              <p class="text-zinc-300 text-sm" data-i18n="about.db.value">
+                Mentoring · Knowledge sharing · Team growth
               </p>
             </div>
             <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
               <p
                 class="text-[10px] uppercase tracking-widest text-yellow-600 mb-2"
+                data-i18n="about.be.label"
               >
-                Back end
+                Open to
               </p>
-              <p class="text-zinc-300 text-sm">
-                PHP &mdash; REST APIs for web &amp; mobile
+              <p class="text-zinc-300 text-sm" data-i18n="about.be.value">
+                Remote work · Open source · Technical writing
               </p>
             </div>
           </div>
@@ -484,8 +556,10 @@
     >
       <div class="max-w-5xl mx-auto">
         <div class="reveal flex items-center gap-4 mb-14">
-          <span class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
-            >02 &mdash; Current Stack</span
+          <span
+            class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
+            data-i18n="stack.label"
+            >02 — Current Stack</span
           >
           <span class="flex-1 h-px bg-zinc-900"></span>
         </div>
@@ -493,10 +567,11 @@
         <div class="reveal mb-10">
           <h2
             class="font-serif text-3xl sm:text-4xl text-white mb-3 leading-snug"
+            data-i18n="stack.heading"
           >
             What I work with today.
           </h2>
-          <p class="text-zinc-500 text-sm">
+          <p class="text-zinc-500 text-sm" data-i18n="stack.subtitle">
             Technologies I use day-to-day in my current role.
           </p>
         </div>
@@ -637,8 +712,10 @@
     <section id="blog" class="py-20 sm:py-28 px-6 border-t border-zinc-900">
       <div class="max-w-5xl mx-auto">
         <div class="reveal flex items-center gap-4 mb-14">
-          <span class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
-            >03 &mdash; Coming Soon</span
+          <span
+            class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
+            data-i18n="blog.label"
+            >03 — Coming Soon</span
           >
           <span class="flex-1 h-px bg-zinc-900"></span>
         </div>
@@ -646,10 +723,11 @@
         <div class="reveal mb-12">
           <h2
             class="font-serif text-3xl sm:text-4xl text-white mb-3 leading-snug"
+            data-i18n="blog.heading"
           >
             What's coming.
           </h2>
-          <p class="text-zinc-500 text-sm">
+          <p class="text-zinc-500 text-sm" data-i18n="blog.subtitle">
             More ways to stay connected and keep learning.
           </p>
         </div>
@@ -661,6 +739,7 @@
           >
             <span
               class="absolute top-4 right-4 text-[9px] uppercase tracking-widest text-yellow-600 border border-yellow-900/50 bg-yellow-950/20 px-2.5 py-0.5 rounded-full"
+              data-i18n="blog.soon"
               >Coming soon</span
             >
             <div
@@ -682,7 +761,10 @@
               </svg>
             </div>
             <h3 class="text-white text-base font-semibold mb-2">Newsletter</h3>
-            <p class="text-zinc-500 text-sm leading-relaxed">
+            <p
+              class="text-zinc-500 text-sm leading-relaxed"
+              data-i18n="blog.newsletter.desc"
+            >
               Curated insights on full-stack development, tooling, and
               engineering practices &mdash; straight to your inbox.
             </p>
@@ -694,6 +776,7 @@
           >
             <span
               class="absolute top-4 right-4 text-[9px] uppercase tracking-widest text-yellow-600 border border-yellow-900/50 bg-yellow-950/20 px-2.5 py-0.5 rounded-full"
+              data-i18n="blog.soon"
               >Coming soon</span
             >
             <div
@@ -714,10 +797,16 @@
                 />
               </svg>
             </div>
-            <h3 class="text-white text-base font-semibold mb-2">
+            <h3
+              class="text-white text-base font-semibold mb-2"
+              data-i18n="blog.blog.title"
+            >
               Engineering Blog
             </h3>
-            <p class="text-zinc-500 text-sm leading-relaxed">
+            <p
+              class="text-zinc-500 text-sm leading-relaxed"
+              data-i18n="blog.blog.desc"
+            >
               Deep dives into architecture decisions, lessons learned, and the
               craft of building production software.
             </p>
@@ -733,8 +822,10 @@
     >
       <div class="max-w-5xl mx-auto">
         <div class="reveal flex items-center gap-4 mb-14">
-          <span class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
-            >04 &mdash; Languages</span
+          <span
+            class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
+            data-i18n="langs.label"
+            >04 — Languages</span
           >
           <span class="flex-1 h-px bg-zinc-900"></span>
         </div>
@@ -742,6 +833,7 @@
         <div class="reveal mb-10">
           <h2
             class="font-serif text-3xl sm:text-4xl text-white mb-3 leading-snug"
+            data-i18n="langs.heading"
           >
             Spoken languages.
           </h2>
@@ -754,7 +846,9 @@
             <span class="text-2xl" aria-hidden="true">🇲🇽</span>
             <div>
               <p class="text-white text-sm font-medium">Spanish</p>
-              <p class="text-zinc-500 text-xs">Native</p>
+              <p class="text-zinc-500 text-xs" data-i18n="langs.es.level">
+                Native
+              </p>
             </div>
           </div>
           <div
@@ -763,7 +857,7 @@
             <span class="text-2xl" aria-hidden="true">🇺🇸</span>
             <div>
               <p class="text-white text-sm font-medium">English</p>
-              <p class="text-zinc-500 text-xs">
+              <p class="text-zinc-500 text-xs" data-i18n="langs.en.level">
                 Professional working proficiency
               </p>
             </div>
@@ -780,7 +874,8 @@
           <div class="reveal flex items-center gap-4 mb-14">
             <span
               class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
-              >06 &mdash; Connect</span
+              data-i18n="connect.label"
+              >06 — Connect</span
             >
             <span class="flex-1 h-px bg-zinc-900"></span>
           </div>
@@ -788,10 +883,14 @@
           <div class="reveal mb-10">
             <h2
               class="font-serif text-4xl sm:text-5xl text-white mb-4 leading-tight"
+              data-i18n-html="connect.heading"
             >
-              Let's build<br />something great.
+              Let’s build<br />something great.
             </h2>
-            <p class="text-zinc-500 text-sm max-w-sm">
+            <p
+              class="text-zinc-500 text-sm max-w-sm"
+              data-i18n="connect.subtitle"
+            >
               Send me a message or find me on any of these platforms.
             </p>
           </div>
@@ -808,6 +907,7 @@
               <label
                 for="cf-name"
                 class="text-[10px] uppercase tracking-widest text-zinc-500"
+                data-i18n="form.name"
                 >Name</label
               >
               <input
@@ -818,12 +918,14 @@
                 autocomplete="name"
                 placeholder="Your name"
                 class="cf-input"
+                data-i18n-placeholder="form.name.ph"
               />
             </div>
             <div class="flex flex-col gap-1.5">
               <label
                 for="cf-email"
                 class="text-[10px] uppercase tracking-widest text-zinc-500"
+                data-i18n="form.email"
                 >Email</label
               >
               <input
@@ -834,12 +936,14 @@
                 autocomplete="email"
                 placeholder="your@email.com"
                 class="cf-input"
+                data-i18n-placeholder="form.email.ph"
               />
             </div>
             <div class="flex flex-col gap-1.5 sm:col-span-2">
               <label
                 for="cf-message"
                 class="text-[10px] uppercase tracking-widest text-zinc-500"
+                data-i18n="form.message"
                 >Message</label
               >
               <textarea
@@ -849,10 +953,16 @@
                 rows="5"
                 placeholder="What's on your mind?"
                 class="cf-input resize-none"
+                data-i18n-placeholder="form.message.ph"
               ></textarea>
             </div>
             <div class="sm:col-span-2 flex items-center gap-4 flex-wrap">
-              <button type="submit" id="cf-submit" class="cf-btn">
+              <button
+                type="submit"
+                id="cf-submit"
+                class="cf-btn"
+                data-i18n="form.submit"
+              >
                 Send message
               </button>
               <p id="cf-status" class="hidden text-sm" aria-live="polite"></p>
@@ -1043,16 +1153,38 @@
               class="flex gap-6 list-none m-0 p-0 text-[10px] uppercase tracking-widest text-zinc-600"
             >
               <li>
-                <a href="#about" class="nav-link" data-section="about">About</a>
+                <a
+                  href="#about"
+                  class="nav-link"
+                  data-section="about"
+                  data-i18n="nav.about"
+                  >About</a
+                >
               </li>
               <li>
-                <a href="#stack" class="nav-link" data-section="stack">Stack</a>
+                <a
+                  href="#stack"
+                  class="nav-link"
+                  data-section="stack"
+                  data-i18n="nav.stack"
+                  >Stack</a
+                >
               </li>
               <li>
-                <a href="#blog" class="nav-link" data-section="blog">Blog</a>
+                <a
+                  href="#blog"
+                  class="nav-link"
+                  data-section="blog"
+                  data-i18n="nav.blog"
+                  >Blog</a
+                >
               </li>
               <li>
-                <a href="#connect" class="nav-link" data-section="connect"
+                <a
+                  href="#connect"
+                  class="nav-link"
+                  data-section="connect"
+                  data-i18n="nav.connect"
                   >Connect</a
                 >
               </li>
