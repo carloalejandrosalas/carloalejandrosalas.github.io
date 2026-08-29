@@ -1,0 +1,31 @@
+# Carlo Salas
+
+> Full Stack Engineer with 10+ years building performant web applications across the entire stack — REST & GraphQL APIs, React frontends, PostgreSQL-backed services, and CI/CD pipelines. Based in Mexico, working with global teams.
+
+Carlo Alejandro Salas is a TypeScript-first engineer whose daily tools span Node.js 22+, Fastify, React, Prisma, and PostgreSQL. He is equally comfortable designing a database schema and shipping a polished UI. He values clean architecture, thorough code reviews, type safety, and mentoring.
+
+The site is a single-page portfolio (SPA) available in English and Spanish. It has no blog posts yet; that section is coming soon.
+
+## About
+
+- [About Carlo](https://carloalejandrosalas.github.io/#about): Background, career journey, and engineering values. Started with PHP & MySQL, evolved through the full JS ecosystem. Led front-end migrations from legacy codebases to modern SPAs.
+
+## Stack
+
+- [Current stack](https://carloalejandrosalas.github.io/#stack): TypeScript, JavaScript, Node.js 22+, Fastify, PHP 8+, Laravel, React.js, Tailwind CSS, Chakra UI, Jest, Vitest, Testing Library, Playwright, PostgreSQL, Prisma, Eloquent, Firebase Firestore, GraphQL, RESTful APIs, OIDC, JWT, Auth0, Firebase Auth, Vite, Docker, Git, GitHub Actions, ESLint, Prettier.
+
+## Spoken Languages
+
+- English — Professional working proficiency
+- Spanish — Native (based in Mexico)
+
+## Contact & Social
+
+- [Contact form](https://carloalejandrosalas.github.io/#connect): Send a message directly from the site.
+- [GitHub](https://github.com/carloalejandrosalas): Open source work and repositories.
+- [LinkedIn](https://www.linkedin.com/in/carlo-alejandro-salas): Professional profile.
+- [X / Twitter](https://twitter.com/carloalexsalas): @carloalexsalas
+
+## Optional
+
+- [Sitemap](https://carloalejandrosalas.github.io/sitemap.xml): Machine-readable sitemap with EN/ES alternate links.

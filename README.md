@@ -1,6 +1,6 @@
 # carloalejandrosalas.github.io
 
-Personal portfolio and resume page for **Carlo Alejandro Salas** — Full Stack Engineer.
+Personal portfolio for **Carlo Alejandro Salas** — Full Stack Engineer.
 
 🌐 **Live:** [carloalejandrosalas.github.io](https://carloalejandrosalas.github.io)
 
@@ -10,12 +10,12 @@ Personal portfolio and resume page for **Carlo Alejandro Salas** — Full Stack 
 
 | Tool                                                 | Version | Purpose                                              |
 | ---------------------------------------------------- | ------- | ---------------------------------------------------- |
-| [Vite](https://vite.dev)                             | 8.x     | Build tool & dev server with HMR                     |
+| [Vite](https://vite.dev)                             | 8.x     | Build tool & dev server                              |
 | [Tailwind CSS v4](https://tailwindcss.com)           | 4.x     | Utility-first CSS via `@tailwindcss/vite` plugin     |
-| [SASS](https://sass-lang.com)                        | 1.x     | Custom styles, animations, and component partials    |
-| [pnpm](https://pnpm.io)                              | 10.x    | Fast, disk-efficient package manager                 |
+| [Sass](https://sass-lang.com)                        | 1.x     | Custom animations, components, and SCSS partials     |
+| [pnpm](https://pnpm.io)                              | 10.x    | Package manager                                      |
 | [GitHub Actions](https://docs.github.com/en/actions) | —       | CI/CD: auto-deploy to GitHub Pages on push to `main` |
-| [Node.js](https://nodejs.org)                        | 24.x    | Runtime (required ≥ 24)                              |
+| [Node.js](https://nodejs.org)                        | ≥ 24    | Runtime                                              |
 
 ---
 
@@ -23,91 +23,55 @@ Personal portfolio and resume page for **Carlo Alejandro Salas** — Full Stack 
 
 ```
 .
-├── index.html                        # Vite HTML entry point
-├── favicon.svg                       # CS monogram favicon (Playfair Display)
-├── vite.config.js                    # Vite + @tailwindcss/vite config
-├── package.json
+├── index.html                  # Single HTML entry — all page sections live here
+├── favicon.svg                 # CS monogram favicon
+├── vite.config.js              # Vite + @tailwindcss/vite config
+├── AGENTS.md                   # AI coding agent context (OpenAI Codex, Gemini CLI, Cursor…)
 │
 ├── src/
-│   ├── main.js                       # JS entry — imports styles + all logic
-│   ├── styles/
-│   │   ├── tailwind.css              # Tailwind v4 import + @theme font config
-│   │   ├── main.scss                 # SASS entry — @use all partials
-│   │   └── partials/
-│   │       ├── _variables.scss       # SASS variables (palette, timings)
-│   │       ├── _animations.scss      # Keyframes: fade-up, reveal, link-flash
-│   │       ├── _navbar.scss          # Scroll-aware navbar, nav-link underline
-│   │       ├── _splash.scss          # Splash screen animations
-│   │       └── _components.scss      # Badge, social-link, social-card, bg-hero
-│   └── assets/
-│       └── imgs/
-│           └── pinacate_image.jpg    # Hero background photo
+│   ├── main.js                 # All JS: i18n, scroll/nav, contact form, splash
+│   └── styles/
+│       ├── tailwind.css        # @import "tailwindcss" + @theme font vars
+│       ├── main.scss           # SCSS entry — @use partials
+│       └── partials/
+│           ├── _variables.scss # Color/transition tokens
+│           ├── _animations.scss
+│           ├── _navbar.scss
+│           ├── _splash.scss
+│           └── _components.scss # .badge, .social-card, .cf-input, .cf-btn
 │
-└── .github/
-    └── workflows/
-        └── deploy.yml                # GitHub Actions deploy pipeline
+└── public/                     # Copied verbatim to dist/ root
+    ├── robots.txt
+    ├── sitemap.xml
+    ├── llms.txt                # AI agent context for the live site
+    └── og-image.png            # TODO: 1200×630 social card (not yet added)
 ```
 
 ---
 
-## Styles Architecture
+## Key Conventions
 
-CSS is split between **Tailwind v4** (utility classes) and **SASS partials** (custom component logic):
+**CSS via `<link>` tags, not JS imports.**
+Both `tailwind.css` and `main.scss` are loaded as `<link rel="stylesheet">` in `index.html`. Do not import them in `main.js`.
 
-### `src/styles/tailwind.css`
+**Tailwind v4 syntax.**
+Uses `@import "tailwindcss"` — there are no `@tailwind base/components/utilities` directives.
 
-Imports Tailwind v4 and declares the custom font theme:
+**Custom i18n (EN / ES, no library).**
+All UI strings live in the `TRANSLATIONS` object in `main.js`. HTML elements use `data-i18n` (textContent), `data-i18n-html` (innerHTML), or `data-i18n-placeholder` (placeholder). When adding visible text: add the attribute to the HTML element **and** both `en`/`es` keys to `TRANSLATIONS`. Language is auto-detected from `navigator.language` and persisted in `localStorage("lang")`.
 
-```css
-@import "tailwindcss";
-
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
-}
-```
-
-### `src/styles/partials/`
-
-| Partial            | Responsibility                                                                                                                                          |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `_variables.scss`  | SASS variables for the yellow/zinc palette (`$y-400`, `$z-950`, …) and timing constants (`$t-fast`, `$t-slow`)                                          |
-| `_animations.scss` | `fade-up` hero entrance, `.reveal` scroll reveal, `.link-clicked` flash                                                                                 |
-| `_navbar.scss`     | `#site-header` transparent→frosted-glass transition on scroll; `#nav-title` / `#nav-dot` reveal; `.nav-link` animated underline and `.nav-active` state |
-| `_splash.scss`     | Full-screen splash overlay with logo scale-in, progress bar grow, and pulsing dot                                                                       |
-| `_components.scss` | `.bg-hero` background image, `.badge` tech pill, `.social-link` hover lift, `.social-card` press effect                                                 |
-
----
-
-## JavaScript (`src/main.js`)
-
-All JS is vanilla, no framework:
-
-| Feature            | Details                                                                                                                                                           |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Scroll reveal**  | `IntersectionObserver` adds `.visible` to `.reveal` elements as they enter the viewport                                                                           |
-| **Navbar state**   | Single `onScroll` handler updates the scroll progress bar, toggles `.scrolled` on the header once past the hero, and activates the "connect" link near the bottom |
-| **Active section** | `IntersectionObserver` on each `section[id]` / `footer[id]` updates `.nav-active` on the matching nav link                                                        |
-| **Slow scroll**    | Custom 900 ms `easeInOutCubic` animation intercepting all `a[href^="#"]` clicks, offset by navbar height                                                          |
-| **Mobile menu**    | Hamburger ↔ X animation toggling the mobile nav panel with `aria-expanded`                                                                                        |
-| **Splash screen**  | Auto-dismissed after 1.8 s with a CSS opacity fade and DOM removal                                                                                                |
+**Scroll/nav declaration order.**
+`navLinks`, `setActive`, and `sectionObserver` must be declared before `onScroll()` is invoked. Reordering causes a TDZ `ReferenceError`.
 
 ---
 
 ## Development
 
 ```bash
-# Install dependencies
-pnpm install
-
-# Start dev server with HMR (http://localhost:5173)
-pnpm dev
-
-# Production build → dist/
-pnpm build
-
-# Preview production build locally
-pnpm preview
+pnpm install        # install dependencies
+pnpm dev            # dev server at http://localhost:5173
+pnpm build          # production build → dist/
+pnpm preview        # preview production build locally
 ```
 
 ---
@@ -121,12 +85,11 @@ Pushes to `main` trigger the GitHub Actions workflow (`.github/workflows/deploy.
 3. Uploads `dist/` as the Pages artifact
 4. Deploys via `actions/deploy-pages`
 
-> **Node version:** runners default to Node 24. See [GitHub changelog](https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/) for details.
+> **Repo setting required:** Settings → Pages → Source → **GitHub Actions**.
 
-> **Repo setting required:** Go to **Settings → Pages → Source** and select **GitHub Actions**.
+---
 
-You can also deploy manually:
+## Before Going Live
 
-```bash
-pnpm deploy   # builds + pushes dist/ to gh-pages branch
-```
+- [ ] Add `public/og-image.png` (1200 × 630 px) for social link previews
+- [ ] Replace the Formspree placeholder in `index.html` (`data-endpoint` on `#contact-form`) with a real form ID
