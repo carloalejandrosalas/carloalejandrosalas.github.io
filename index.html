@@ -785,16 +785,79 @@
             <span class="flex-1 h-px bg-zinc-900"></span>
           </div>
 
-          <div class="reveal mb-14">
+          <div class="reveal mb-10">
             <h2
               class="font-serif text-4xl sm:text-5xl text-white mb-4 leading-tight"
             >
               Let's build<br />something great.
             </h2>
             <p class="text-zinc-500 text-sm max-w-sm">
-              Find me on any of these platforms and let's start a conversation.
+              Send me a message or find me on any of these platforms.
             </p>
           </div>
+
+          <!-- Contact form -->
+          <!-- Replace YOUR_FORM_ID with your Formspree form ID after signing up at formspree.io -->
+          <form
+            id="contact-form"
+            data-endpoint="https://formspree.io/f/YOUR_FORM_ID"
+            novalidate
+            class="reveal grid grid-cols-1 sm:grid-cols-2 gap-4 mb-14 max-w-2xl"
+          >
+            <div class="flex flex-col gap-1.5">
+              <label
+                for="cf-name"
+                class="text-[10px] uppercase tracking-widest text-zinc-500"
+                >Name</label
+              >
+              <input
+                id="cf-name"
+                name="name"
+                type="text"
+                required
+                autocomplete="name"
+                placeholder="Your name"
+                class="cf-input"
+              />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label
+                for="cf-email"
+                class="text-[10px] uppercase tracking-widest text-zinc-500"
+                >Email</label
+              >
+              <input
+                id="cf-email"
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+                placeholder="your@email.com"
+                class="cf-input"
+              />
+            </div>
+            <div class="flex flex-col gap-1.5 sm:col-span-2">
+              <label
+                for="cf-message"
+                class="text-[10px] uppercase tracking-widest text-zinc-500"
+                >Message</label
+              >
+              <textarea
+                id="cf-message"
+                name="message"
+                required
+                rows="5"
+                placeholder="What's on your mind?"
+                class="cf-input resize-none"
+              ></textarea>
+            </div>
+            <div class="sm:col-span-2 flex items-center gap-4 flex-wrap">
+              <button type="submit" id="cf-submit" class="cf-btn">
+                Send message
+              </button>
+              <p id="cf-status" class="hidden text-sm" aria-live="polite"></p>
+            </div>
+          </form>
 
           <!-- Social cards grid -->
           <div class="reveal grid grid-cols-2 sm:grid-cols-4 gap-3">

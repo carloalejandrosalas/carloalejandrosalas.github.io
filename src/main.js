@@ -146,6 +146,51 @@ document.addEventListener("click", (e) => {
   if (!menuBtn.contains(e.target) && !mobileNav.contains(e.target)) closeMenu();
 });
 
+// ── Contact form ──────────────────────────────────────────────
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  const submitBtn = document.getElementById("cf-submit");
+  const statusEl = document.getElementById("cf-status");
+
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const endpoint = contactForm.dataset.endpoint;
+    if (!endpoint || endpoint.includes("YOUR_FORM_ID")) {
+      statusEl.textContent = "Form endpoint not configured yet.";
+      statusEl.className = "text-sm text-yellow-500";
+      statusEl.classList.remove("hidden");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+    statusEl.classList.add("hidden");
+
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(contactForm),
+      });
+      if (res.ok) {
+        contactForm.reset();
+        statusEl.textContent = "Message sent! I’ll be in touch soon.";
+        statusEl.className = "text-sm text-green-400";
+      } else {
+        statusEl.textContent = "Something went wrong. Please try again.";
+        statusEl.className = "text-sm text-red-400";
+      }
+    } catch {
+      statusEl.textContent = "Network error. Please try again.";
+      statusEl.className = "text-sm text-red-400";
+    } finally {
+      statusEl.classList.remove("hidden");
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send message";
+    }
+  });
+}
+
 // ── Splash screen ─────────────────────────────────────────────
 (function () {
   const splash = document.getElementById("splash");
