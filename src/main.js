@@ -1,6 +1,3 @@
-import "./styles/tailwind.css";
-import "./styles/main.scss";
-
 // ── Copyright year ────────────────────────────────────────────
 document.getElementById("year").textContent = new Date().getFullYear();
 
