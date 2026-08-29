@@ -48,7 +48,6 @@ function onScroll() {
 }
 
 window.addEventListener("scroll", onScroll, { passive: true });
-onScroll();
 
 // ── Active section detection ──────────────────────────────────
 const navLinks = document.querySelectorAll(".nav-link[data-section]");
@@ -68,6 +67,8 @@ const sectionObserver = new IntersectionObserver(
   { threshold: 0.3, rootMargin: "-10% 0px -55% 0px" },
 );
 sections.forEach((s) => sectionObserver.observe(s));
+
+onScroll();
 
 // ── Slow smooth scroll with easing ───────────────────────────
 const NAV_HEIGHT = 56;
@@ -158,5 +159,5 @@ document.addEventListener("click", (e) => {
       once: true,
     });
   };
-  setTimeout(hide, 1800);
+  setTimeout(hide, 900);
 })();

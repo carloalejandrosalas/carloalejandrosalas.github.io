@@ -107,11 +107,6 @@
           height="96"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <defs>
-            <style>
-              @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600");
-            </style>
-          </defs>
           <text
             x="50"
             y="68"
@@ -276,14 +271,20 @@
         <h1
           class="fade-up d1 font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-tight mb-5"
         >
-          Carlo<br />Alejandro Salas
+          Carlo Salas
         </h1>
+
+        <p
+          class="fade-up d1 text-[11px] uppercase tracking-[0.2em] text-zinc-500 mb-5"
+        >
+          TypeScript Fanatic &middot; Professional Bug Whisperer
+        </p>
 
         <p
           class="fade-up d2 text-zinc-400 text-base sm:text-lg leading-relaxed mb-10 max-w-lg mx-auto"
         >
-          10+ years crafting high-quality web applications — from resilient
-          back-end APIs to pixel-perfect front-end experiences.
+          10+ years turning coffee into web applications — back-end APIs that
+          don't break at 3am &amp; front-end UIs that make designers smile. ☕
         </p>
 
         <div class="fade-up d2 flex justify-center items-center gap-2 mb-10">
@@ -412,35 +413,43 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          <!-- Narrative -->
+          <!-- Background -->
           <div class="reveal">
             <h2
               class="font-serif text-3xl sm:text-4xl text-white mb-6 leading-snug"
             >
               Building for the web,<br />end&#8202;to&#8202;end.
             </h2>
-            <div class="space-y-4 text-zinc-400 text-[0.95rem] leading-relaxed">
-              <p>
-                I'm a Full Stack Developer with 10+ years of experience across
-                the entire web stack. I've worked with SQL databases — MySQL,
-                PostgreSQL, and SQL Server — and developed landing pages and
-                REST APIs in PHP for both web and mobile clients.
-              </p>
-              <p>
-                On the front end I've built single-page applications using
-                Angular&nbsp;2+, React.js, and Vue.js, always aiming for clean
-                architecture and great user experience.
-              </p>
-              <p>
-                Beyond shipping code, I've mentored and trained new team members
-                and interns on in-demand technologies, engineering best
-                practices, effective workflows, and collaborative teamwork.
-              </p>
+            <p
+              class="text-[10px] uppercase tracking-widest text-yellow-600 mb-4"
+            >
+              Background
+            </p>
+            <div class="space-y-3 text-zinc-400 text-[0.95rem] leading-relaxed">
+              <p>10+ years across the full web stack.</p>
+              <p>Back-end APIs that hold up at 3am.</p>
+              <p>Front-end UIs that make designers happy.</p>
+              <p>SQL fluent: MySQL &middot; PostgreSQL &middot; SQL Server.</p>
+              <p>REST APIs in PHP for web &amp; mobile.</p>
             </div>
           </div>
 
-          <!-- Highlight cards -->
+          <!-- What drives me -->
           <div class="reveal space-y-3">
+            <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <p
+                class="text-[10px] uppercase tracking-widest text-yellow-600 mb-2"
+              >
+                What drives me
+              </p>
+              <ul class="text-zinc-300 text-sm space-y-1.5">
+                <li>SPAs with Angular 2+, React.js &amp; Vue.js</li>
+                <li>Obsessed with clean architecture &amp; great UX</li>
+                <li>Mentored devs and interns on modern tooling</li>
+                <li>Deep PR reviews, not just approvals</li>
+                <li>Shipping with confidence, always</li>
+              </ul>
+            </div>
             <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
               <p
                 class="text-[10px] uppercase tracking-widest text-yellow-600 mb-2"
@@ -458,28 +467,7 @@
                 Back end
               </p>
               <p class="text-zinc-300 text-sm">
-                PHP &mdash; landing pages &amp; REST APIs for web and mobile
-              </p>
-            </div>
-            <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p
-                class="text-[10px] uppercase tracking-widest text-yellow-600 mb-2"
-              >
-                Front end SPAs
-              </p>
-              <p class="text-zinc-300 text-sm">
-                Angular 2+ &middot; React.js &middot; Vue.js
-              </p>
-            </div>
-            <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p
-                class="text-[10px] uppercase tracking-widest text-yellow-600 mb-2"
-              >
-                Mentoring &amp; Leadership
-              </p>
-              <p class="text-zinc-300 text-sm">
-                Training new team members and interns on best practices, modern
-                tooling, and effective teamwork.
+                PHP &mdash; REST APIs for web &amp; mobile
               </p>
             </div>
           </div>
@@ -518,11 +506,27 @@
             <p
               class="text-[10px] uppercase tracking-widest text-yellow-600 mb-4"
             >
+              Languages
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">TypeScript</span>
+              <span class="badge">JavaScript</span>
+            </div>
+          </div>
+
+          <div
+            class="reveal rounded-xl border border-zinc-800 bg-zinc-900/40 p-6"
+          >
+            <p
+              class="text-[10px] uppercase tracking-widest text-yellow-600 mb-4"
+            >
               Runtime &amp; Server
             </p>
             <div class="flex flex-wrap gap-2">
-              <span class="badge">Node.js 20+</span>
+              <span class="badge">Node.js 22+</span>
               <span class="badge">Fastify</span>
+              <span class="badge">PHP 8+</span>
+              <span class="badge">Laravel</span>
             </div>
           </div>
 
@@ -551,7 +555,9 @@
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="badge">Jest</span>
-              <span class="badge">React Testing Library</span>
+              <span class="badge">Vitest</span>
+              <span class="badge">Testing Library</span>
+              <span class="badge">Playwright</span>
             </div>
           </div>
 
@@ -566,6 +572,8 @@
             <div class="flex flex-wrap gap-2">
               <span class="badge">PostgreSQL</span>
               <span class="badge">Prisma</span>
+              <span class="badge">Eloquent</span>
+              <span class="badge">Firebase Firestore</span>
             </div>
           </div>
 
@@ -575,13 +583,11 @@
             <p
               class="text-[10px] uppercase tracking-widest text-yellow-600 mb-4"
             >
-              APIs &amp; Data
+              APIs
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="badge">GraphQL</span>
-              <span class="badge">REST</span>
-              <span class="badge">JSON</span>
-              <span class="badge">XML</span>
+              <span class="badge">RESTful APIs</span>
             </div>
           </div>
 
@@ -595,9 +601,30 @@
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="badge">OIDC</span>
-              <span class="badge">OpenID</span>
-              <span class="badge">JWT/Cookies</span>
-              <span class="badge">Refresh tokens</span>
+              <span class="badge">JWT / Cookies</span>
+              <span class="badge">Refresh Tokens</span>
+              <span class="badge">Auth0</span>
+              <span class="badge">Firebase Auth</span>
+            </div>
+          </div>
+
+          <div
+            class="reveal rounded-xl border border-zinc-800 bg-zinc-900/40 p-6"
+          >
+            <p
+              class="text-[10px] uppercase tracking-widest text-yellow-600 mb-4"
+            >
+              Tooling
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">Vite</span>
+              <span class="badge">Docker</span>
+              <span class="badge">Git</span>
+              <span class="badge">GitHub Actions</span>
+              <span class="badge">ESLint</span>
+              <span class="badge">OxLint</span>
+              <span class="badge">Prettier</span>
+              <span class="badge">Oxfmt</span>
             </div>
           </div>
         </div>
@@ -697,6 +724,52 @@
       </div>
     </section>
 
+    <!-- ═══ SPOKEN LANGUAGES ═══ -->
+    <section
+      id="languages"
+      class="py-20 sm:py-28 px-6 bg-zinc-900/20 border-t border-b border-zinc-900"
+    >
+      <div class="max-w-5xl mx-auto">
+        <div class="reveal flex items-center gap-4 mb-14">
+          <span class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
+            >04 &mdash; Languages</span
+          >
+          <span class="flex-1 h-px bg-zinc-900"></span>
+        </div>
+
+        <div class="reveal mb-10">
+          <h2
+            class="font-serif text-3xl sm:text-4xl text-white mb-3 leading-snug"
+          >
+            Spoken languages.
+          </h2>
+        </div>
+
+        <div class="reveal grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg">
+          <div
+            class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 flex items-center gap-4"
+          >
+            <span class="text-2xl" aria-hidden="true">🇲🇽</span>
+            <div>
+              <p class="text-white text-sm font-medium">Spanish</p>
+              <p class="text-zinc-500 text-xs">Native</p>
+            </div>
+          </div>
+          <div
+            class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 flex items-center gap-4"
+          >
+            <span class="text-2xl" aria-hidden="true">🇺🇸</span>
+            <div>
+              <p class="text-white text-sm font-medium">English</p>
+              <p class="text-zinc-500 text-xs">
+                Professional working proficiency
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ CONNECT / FOOTER ═══ -->
     <footer id="connect" class="border-t border-zinc-900">
       <!-- CTA area -->
@@ -705,7 +778,7 @@
           <div class="reveal flex items-center gap-4 mb-14">
             <span
               class="text-[10px] uppercase tracking-[0.25em] text-yellow-600"
-              >04 &mdash; Connect</span
+              >06 &mdash; Connect</span
             >
             <span class="flex-1 h-px bg-zinc-900"></span>
           </div>
