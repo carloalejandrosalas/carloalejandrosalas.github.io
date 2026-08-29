@@ -89,6 +89,14 @@ Pushes to `main` trigger the GitHub Actions workflow (`.github/workflows/deploy.
 
 ---
 
+## Caching
+
+Vite fingerprints all JS and CSS output files with a content hash (e.g. `main-BxYzAbc1.js`), so browsers can cache them indefinitely and the URL changes whenever content changes. This is handled automatically — no config needed.
+
+GitHub Pages forces `Cache-Control: max-age=600` (10 min) on every file and does not support custom headers (`_headers` files are ignored). The hashing ensures stale assets are never served; the 10-minute TTL is a GitHub Pages platform constraint that cannot be overridden without fronting the site with a CDN (e.g. Cloudflare free tier).
+
+---
+
 ## Before Going Live
 
 - [ ] Add `public/og-image.png` (1200 × 630 px) for social link previews

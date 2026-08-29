@@ -67,3 +67,6 @@ Use `@import "tailwindcss"` in `tailwind.css`. There are no `@tailwind base/comp
 Async Formspree submission. Endpoint is set via `data-endpoint` on `#contact-form` (currently a placeholder). All status messages go through `t()`.
 
 **`public/og-image.png`** is referenced in OG/Twitter meta but the file does not exist yet. Add a 1200×630 PNG before deploying for proper social link previews.
+
+**Caching:**
+Vite fingerprints all JS/CSS output files with a content hash — browsers can cache them indefinitely and the URL changes on every content change. GitHub Pages forces `Cache-Control: max-age=600` on all files and ignores `_headers` files, so long-lived asset caching requires a CDN in front of the site.
