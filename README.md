@@ -8,14 +8,14 @@ Personal portfolio for **Carlo Alejandro Salas** — Full Stack Engineer.
 
 ## Tech Stack
 
-| Tool                                                 | Version | Purpose                                              |
-| ---------------------------------------------------- | ------- | ---------------------------------------------------- |
-| [Vite](https://vite.dev)                             | 8.x     | Build tool & dev server                              |
-| [Tailwind CSS v4](https://tailwindcss.com)           | 4.x     | Utility-first CSS via `@tailwindcss/vite` plugin     |
-| [Sass](https://sass-lang.com)                        | 1.x     | Custom animations, components, and SCSS partials     |
-| [pnpm](https://pnpm.io)                              | 10.x    | Package manager                                      |
-| [GitHub Actions](https://docs.github.com/en/actions) | —       | CI/CD: auto-deploy to GitHub Pages on push to `main` |
-| [Node.js](https://nodejs.org)                        | ≥ 24    | Runtime                                              |
+| Tool                                                 | Version | Purpose                                            |
+| ---------------------------------------------------- | ------- | -------------------------------------------------- |
+| [Vite](https://vite.dev)                             | 8.x     | Build tool & dev server                            |
+| [Tailwind CSS v4](https://tailwindcss.com)           | 4.x     | Utility-first CSS via `@tailwindcss/vite` plugin   |
+| [Sass](https://sass-lang.com)                        | 1.x     | Custom animations, components, and SCSS partials   |
+| [pnpm](https://pnpm.io)                              | 10.x    | Package manager                                    |
+| [GitHub Actions](https://docs.github.com/en/actions) | —       | CI/CD: deploy to GitHub Pages on published release |
+| [Node.js](https://nodejs.org)                        | ≥ 24    | Runtime                                            |
 
 ---
 
@@ -85,12 +85,14 @@ pnpm preview        # preview production build locally
 
 ## Deployment
 
-Pushes to `main` trigger the GitHub Actions workflow (`.github/workflows/deploy.yml`), which:
+Publishing a release on GitHub triggers the Actions workflow (`.github/workflows/deploy.yml`), which:
 
 1. Installs deps with `pnpm install --frozen-lockfile`
 2. Builds with `vite build` (Node 24)
 3. Uploads `dist/` as the Pages artifact
 4. Deploys via `actions/deploy-pages`
+
+The workflow can also be triggered manually from the Actions tab via `workflow_dispatch`.
 
 > **Repo setting required:** Settings → Pages → Source → **GitHub Actions**.
 

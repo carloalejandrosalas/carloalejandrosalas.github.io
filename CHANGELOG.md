@@ -26,6 +26,7 @@ All notable changes to this project will be documented in this file.
 - `VITE_CONTACT_FORM_ENDPOINT` and `VITE_RECAPTCHA_SITE_KEY` env vars removed; replaced with `VITE_WEB3FORMS_ACCESS_KEY`
 - GitHub Actions deploy workflow updated to use `VITE_WEB3FORMS_ACCESS_KEY` secret
 - `example.env` updated to reflect new env var
+- Deploy pipeline now triggers on published GitHub releases instead of every push to `main`
 
 ### Removed
 
