@@ -71,6 +71,19 @@
     border-color: v.$y-600;
     box-shadow: 0 0 0 3px rgba(202, 138, 4, 0.15);
   }
+  &--error {
+    border-color: #f87171;
+    &:focus {
+      border-color: #f87171;
+      box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2);
+    }
+  }
+}
+
+.cf-field-error {
+  font-size: 0.75rem;
+  color: #f87171;
+  margin-top: 0.25rem;
 }
 
 .cf-btn {
