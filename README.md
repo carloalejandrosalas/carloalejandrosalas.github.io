@@ -29,16 +29,25 @@ Personal portfolio for **Carlo Alejandro Salas** — Full Stack Engineer.
 ├── AGENTS.md                   # AI coding agent context (OpenAI Codex, Gemini CLI, Cursor…)
 │
 ├── src/
-│   ├── main.js                 # All JS: i18n, scroll/nav, contact form, splash
-│   └── styles/
-│       ├── tailwind.css        # @import "tailwindcss" + @theme font vars
-│       ├── main.scss           # SCSS entry — @use partials
-│       └── partials/
-│           ├── _variables.scss # Color/transition tokens
-│           ├── _animations.scss
-│           ├── _navbar.scss
-│           ├── _splash.scss
-│           └── _components.scss # .badge, .social-card, .cf-input, .cf-btn
+│   ├── styles/
+│   │   ├── tailwind.css        # @import "tailwindcss" + @theme font vars
+│   │   ├── main.scss           # SCSS entry — @use partials
+│   │   └── partials/
+│   │       ├── _variables.scss # Color/transition tokens
+│   │       ├── _animations.scss
+│   │       ├── _navbar.scss
+│   │       ├── _splash.scss
+│   │       └── _components.scss # .badge, .social-card, .cf-input, .cf-btn
+│   └── scripts/
+│       ├── main.js             # Entry point — imports and calls all init* functions
+│       ├── utils/
+│       │   ├── i18n.js         # TRANSLATIONS, t(), applyTranslations(), initI18n()
+│       │   ├── scroll.js       # Scroll reveal, progress bar, active nav, smooth scroll
+│       │   └── splash.js       # Splash screen fade-out
+│       ├── sections/
+│       │   └── nav.js          # Mobile hamburger menu
+│       └── forms/
+│           └── contact.js      # Contact form, JS validation, Web3Forms submission
 │
 └── public/                     # Copied verbatim to dist/ root
     ├── robots.txt
@@ -58,12 +67,10 @@ Both `tailwind.css` and `main.scss` are loaded as `<link rel="stylesheet">` in `
 Uses `@import "tailwindcss"` — there are no `@tailwind base/components/utilities` directives.
 
 **Custom i18n (EN / ES, no library).**
-All UI strings live in the `TRANSLATIONS` object in `main.js`. HTML elements use `data-i18n` (textContent), `data-i18n-html` (innerHTML), or `data-i18n-placeholder` (placeholder). When adding visible text: add the attribute to the HTML element **and** both `en`/`es` keys to `TRANSLATIONS`. Language is auto-detected from `navigator.language` and persisted in `localStorage("lang")`.
+All UI strings live in `src/scripts/utils/i18n.js` inside the `TRANSLATIONS` object. HTML elements use `data-i18n` (textContent), `data-i18n-html` (innerHTML), or `data-i18n-placeholder` (placeholder). When adding visible text: add the attribute to the HTML element **and** both `en`/`es` keys to `TRANSLATIONS`. Language is auto-detected from `navigator.language` and persisted in `localStorage("lang")`.
 
-**Scroll/nav declaration order.**
-`navLinks`, `setActive`, and `sectionObserver` must be declared before `onScroll()` is invoked. Reordering causes a TDZ `ReferenceError`.
-
----
+**Contact form (Web3Forms).**
+Async submission to `https://api.web3forms.com/submit`. The access key is injected at build time via `VITE_WEB3FORMS_ACCESS_KEY` (hidden `<input name="access_key">`). Fields: name, email, subject, company/organization (optional — defaults to `Independent`/`Independiente`), message. JS validation runs before submission (`src/scripts/forms/contact.js`). Spam protection: honeypot field (`name="botcheck"`) + 15-minute `localStorage` cooldown after a successful send. All status messages go through `t()`.
 
 ## Development
 
@@ -100,4 +107,4 @@ GitHub Pages forces `Cache-Control: max-age=600` (10 min) on every file and does
 ## Before Going Live
 
 - [ ] Add `public/og-image.png` (1200 × 630 px) for social link previews
-- [ ] Replace the Formspree placeholder in `index.html` (`data-endpoint` on `#contact-form`) with a real form ID
+- [ ] Add `VITE_WEB3FORMS_ACCESS_KEY` as a GitHub repository secret (Settings → Secrets → Actions)
